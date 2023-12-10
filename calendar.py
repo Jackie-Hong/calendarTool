@@ -24,31 +24,6 @@ class CalendarApp(QWidget):
         self.calendar.setGridVisible(True)
         self.calendar.clicked[QDate].connect(self.showSchedule)
 
-        # 设置样式表
-        style_sheet = """
-            QCalendarWidget {
-                background-color: lightgray;
-                border: 10px solid gray;
-            }
-
-            QCalendarWidget QAbstractItemView {
-                selection-background-color: green;
-                alternate-background-color: red;
-            }
-            
-            QSpinBox::up-button {
-            subcontrol-origin: border;
-            subcontrol-position: top right; /* position at the top right corner */
-        
-            width: 16px; /* 16 + 2*1px border-width = 15px padding + 3px parent border */
-            border-image: url(:/images/spinup.png) 1;
-            border-width: 1px;
-            }
-        """
-
-        self.calendar.setStyleSheet(style_sheet)
-
-
 
         # 创建文本编辑部件用于显示和编辑日程
         self.schedule_edit = QTextEdit(self)
